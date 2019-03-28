@@ -1,0 +1,12 @@
+<!--pages/read/index.wxml-->
+<import src="../../wxParse/wxParse.wxml"/>
+<view class='container'>
+  <view class='title'>{{chapter_info.title}}</view>
+  <view class='content'>
+   <template is="wxParse" data="{{wxParseData:chapter_content.nodes}}"/>
+  </view>
+  <view class='pages'>
+  <navigator class='button' wx:if="{{prev_id>0}}" url="/pages/read/index?id={{prev_id}}&novel_id={{chapter_info.novel_id}}"><button size="mini" type="warn"  >上一章</button></navigator>
+  <navigator class='button' wx:if="{{next_id>0}}" url="/pages/read/index?id={{next_id}}&novel_id={{chapter_info.novel_id}}"><button size="mini" type="warn" >下一章</button></navigator>
+  </view>
+</view>

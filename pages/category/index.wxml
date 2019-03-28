@@ -1,0 +1,27 @@
+<view class="container">
+    <view class='category'>
+    <block wx:for="{{category}}">
+      <view class='c_box {{c_id==item.id ? "active":""}}' id="{{item.id}}" bindtap='getCategory'>{{item.c_name}}</view>
+    </block>
+      <!-- <view class='c_box {{c_id==1 ? "active":""}}' id="1" bindtap='getCategory'>玄幻</view>
+      <view class='c_box {{c_id==2 ? "active":""}}' id="2" bindtap='getCategory'>武侠</view>
+      <view class='c_box {{c_id==3 ? "active":""}}' id="3" bindtap='getCategory'>都市</view>
+      <view class='c_box {{c_id==4 ? "active":""}}' id="4" bindtap='getCategory'>历史</view>
+      <view class='c_box {{c_id==5 ? "active":""}}' id="5" bindtap='getCategory'>言情</view>
+      <view class='c_box {{c_id==6 ? "active":""}}' id="6" bindtap='getCategory'>恐怖</view> -->
+    </view>
+        <block wx:for="{{bookList}}">
+            <navigator hover-class="nav-hover" url="/pages/detail/index?id={{item.id}}">
+                <view class="book_item"> 
+                    <image mode="aspectFit" class="book_item_img" src="{{'http://www.test.com'+item.image_url}}"></image>
+                    <view class="book_item_infos">
+                        <view class="book_title">{{item.name}}</view>
+                        <view class="book_author">作者：{{item.author_name}}</view>
+                        <view class="book_tags">标签：{{item.tags}}</view>
+                        <view class="book_tags">状态：{{item.status == 1 ? "连载" : "完结"}}</view>
+                         <view class="book_tags">点击量{{item.clicks}}</view>
+                    </view>
+                </view>
+            </navigator>
+        </block>  
+</view> 

@@ -1,0 +1,70 @@
+<!--index.wxml-->
+
+<view class="container">
+<!--搜索 开始-->
+	<view class="user-section">
+        <image class="user_headimg" src="{{userInfo.avatarUrl}}"></image>
+        <navigator url="../search/index">
+            <view class="search_ico" ></view>
+        </navigator>
+        <view class="user_hello">
+            <text>欢迎, {{userInfo.nickName}}{{date}}</text>
+        </view>      
+    </view>
+</view>
+<!--搜索结束-->
+<!--滑动图片开始-->
+<view class="user_img_top">
+	<swiper class="banner-box" indicator-dots="true" autoplay="true" interval="5000" indicator-active-color="#ff0000" duration="1000" circular="true">
+            <block wx:for="{{banners}}" >
+                <swiper-item>
+                    <image bindtap="goToDetail" src="{{'http://www.test.com'+item.image_url}}" class="slide-image" width="100%" height="100%"  url="/pages/detail/index" />
+                </swiper-item>
+            </block>
+        </swiper>
+</view>
+<!--滑动图片结束-->
+<!--本周最火-->
+<view class='floortitle'>
+    <view class='floortitlemoreicon'>最新小说</view>
+    <view class='floortitlemoretext' bindtap="goToDetail" >更多> </view>
+</view>
+<view>
+<block wx:for="{{news_list}}">
+            <navigator hover-class="nav-hover" url="/pages/detail/index?id={{item.id}}&name=dsssd">
+                <view class="book_item"> 
+                <image class="book_item_img" mode="aspectFit"  src="{{'http://www.test.com'+item.image_url}}"></image>
+                    
+                    <view class="book_item_infos">
+                        <view class="book_title">{{item.name}}</view>
+                        <view class="book_author">作者：{{item.author_name}}</view>
+                        <view class="book_tags">标签：{{item.tags}}</view>
+                        <view class="book_item_summary">摘要：<rich-text>{{item.desc}}</rich-text></view>
+                    </view>
+                </view>
+            </navigator>
+</block>
+</view>
+<!--今日限免-->
+<view class='floortitle'>
+    <view class='floortitlemoreicon'>点击排行</view>
+    <view class='floortitlemoretext' bindtap="goToDetail" >更多> </view>
+</view>
+<view>
+<block wx:for="{{clicks_list}}">
+            <navigator hover-class="nav-hover" url="/pages/detail/index?id={{item.id}}">
+                <view class="book_item"> 
+                <image class="book_item_img" mode="aspectFit"  src="{{'http://www.test.com'+item.image_url}}"></image>
+                    
+                    <view class="book_item_infos">
+                        <view class="book_title">{{item.name}}</view>
+                        <view class="book_author">作者：{{item.author_name}}</view>
+                        <view class="book_tags">标签：{{item.tags}}</view>
+                        <view class="book_tags">点击次数: <rich-text>{{item.clicks}}</rich-text></view>
+                    </view>
+                </view>
+            </navigator>
+</block>
+</view>
+<!--今日限免结束-->
+

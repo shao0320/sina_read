@@ -1,0 +1,28 @@
+<import src="../../wxParse/wxParse.wxml"/>
+<view class="container">
+
+    <block >
+    <image class="pic" mode="aspectFit" src="{{'http://www.test.com'+novel_detail.image_url}}"></image>
+<view class="tip">小说信息</view>
+        <view class="bookinfo pct100">
+            <view class="book_author">标题：{{novel_detail.name}}</view>
+            <view class="book_publisher">阅读次数：<text>{{novel_detail.read_num}}</text></view>
+            <view class="book_author">作者：{{novel_detail.author_name}}</view>
+            <view class="book_publisher">分类：<text>{{novel_detail.c_name}}</text></view>
+            <view class="book_tags">标签：{{novel_detail.tags}}</view>
+            <view class="book_pubdate">状态：{{novel_detail.status == 1 ?'连载': '完结'}}</view>
+        </view>
+        <view class="tip">小说摘要</view>
+        <view class="book_summary f8 ovh rel" style="{{'height:'+smryHeight}}">　　
+        <template is="wxParse" data="{{wxParseData:desc.nodes}}"/></view>
+        <view class="extend-bar" wx:if="{{smryHeight=='4.5rem'}}" bindtap="extendBox">展开▼</view>
+        <view class="extend-bar" wx:else bindtap="extendBox">收起▲</view>
+     </block>  
+    <view class='bottom'>
+    <navigator class='navigator' url="/pages/read/index?id={{chapter_id}}&novel_id={{id}}" wx:if="{{chapter_id >0}}"><button size='mini' type="primary">立即阅读</button></navigator>
+    <navigator class='navigator' url="/pages/chapter/index?novel_id={{novel_detail.id}}" wx:if="{{chapter_id >0}}"><button size='mini'  type="warn">查看章节</button></navigator>
+    </view>
+  </view>
+   
+  <view>
+</view>

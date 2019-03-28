@@ -1,0 +1,44 @@
+.container{
+    padding: 0;
+}
+.container view{
+    box-sizing: border-box;
+    padding: .1rem .3rem;
+}
+.pic{
+    width:100%;
+    background-color: rgba(0, 0, 0, 0.45);
+    padding: 0.5rem 0;
+}
+.tip{
+    width: 100%;
+    padding-left: 2%;
+    height:64rpx;
+    line-height: 64rpx;
+    border-bottom: 1px solid #e2e2e3;
+    font-size: .8rem;
+    color:darkseagreen;
+    font-weight: bold;
+}
+
+.bookinfo view{
+    min-width: 40%;
+    float: left;
+    padding: 0 .2rem;
+    max-width: 70%; 
+    font-size: .7rem;
+    color: #666;
+}
+.book_star text{
+    color: gold;
+}
+
+.bottom{
+  bottom: 5px;
+  position: fixed;
+}
+.bottom .navigator{
+  float: left;
+  margin-left: 10px;
+}
+

@@ -1,0 +1,11 @@
+<view class="container">
+
+        <block wx:for="{{read_rank}}">
+        <navigator href="/pages/detail/index?id={{item.id}}">
+        <view class='rank'>
+          <view class='left'><b>{{index+1}}:</b>   {{item.name}}</view>
+          <view class='right'>阅读次数:{{item.read_num}}</view>
+        </view>
+        </navigator>
+        </block>
+</view> 

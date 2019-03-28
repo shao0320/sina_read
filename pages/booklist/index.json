@@ -1,0 +1,5 @@
+{
+    "navigationBarTitleText":"本期书单",
+    "enablePullDownRefresh": true,
+    "onReachBottomDistance": 60
+}

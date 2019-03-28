@@ -1,0 +1,31 @@
+/* pages/read/index.wxss */
+.container{
+    padding: 0;
+}
+.container view{
+    box-sizing: border-box;
+    padding: .1rem .5rem;
+}
+
+.title{
+  font-size:1rem;
+  font-weight: bold;
+  margin: 8px auto;
+}
+
+.content{
+  text-indent: 2rem;
+  text-align: justify;
+  font-size:0.8rem;
+  font-weight: light;
+  line-height:1.1rem;
+  height: auto;
+}
+.pages{
+  bottom:0px;
+  position: fixed;
+}
+.pages .button{
+  float: left;
+  margin-left: 10px;
+}

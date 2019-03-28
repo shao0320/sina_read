@@ -1,0 +1,10 @@
+<!--pages/chapter/index.wxml-->
+<view class='container'>
+<block  wx:for="{{chapter_list}}">
+<view class="chapter">
+<navigator url='/pages/read/index?id={{item.id}}&novel_id={{item.novel_id}}'>
+{{item.title}}
+</navigator>
+</view>
+</block>
+</view>

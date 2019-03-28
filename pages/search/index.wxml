@@ -1,0 +1,29 @@
+<view class="container">
+    <view class="searchform ">
+    <form bindsubmit='toSearch'>
+        <input name="name" bindinput="changeValue" class="searchinput bg-white" placeholder="请输入小说名字或作者" value=""/>
+        <button size="mini" type='warn' form-type='submit' style='float:left;width:20%;'>搜索</button>
+    </form>
+        
+    </view>
+    <scroll-view scroll-y="true" class="bookitems-section" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-top="100">
+        <view class='floortitle' wx:if="{{view_show}}">
+          <view class='floortitlemoreicon' style="font-size:12px">共：<span style="color:red;font-size:12px">{{count}}</span> 条数据</view>
+        </view>
+       <block wx:for="{{bookList}}">
+            <navigator hover-class="nav-hover" url="/pages/detail/index?id={{item.id}}">
+                <view class="book_item"> 
+                    <image mode="aspectFit" class="book_item_img" src="{{'http://www.test.com'+item.image_url}}"></image>
+                    <view class="book_item_infos">
+                        <view class="book_title">{{item.name}}</view>
+                        <view class="book_author">作者：{{item.author_name}}</view>
+                        <view class="book_tags">标签：{{item.tags}}</view>
+                        <view class="book_tags">状态：{{item.status == 1 ? "连载" : "完结"}}</view>
+                         <view class="book_tags">点击量{{item.clicks}}</view>
+                    </view>
+                </view>
+            </navigator>
+        </block>  
+    
+    </scroll-view>
+</view>

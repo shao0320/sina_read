@@ -1,0 +1,16 @@
+<view class="container">
+        <block wx:for="{{bookList}}">
+            <navigator hover-class="nav-hover" url="../detail/index?id={{item.id}}">
+                <view class="book_item"> 
+                    <image mode="aspectFit" class="book_item_img" src="{{'http://www.test.com'+item.image_url}}"></image>
+                    <view class="book_item_infos">
+                        <view class="book_title">{{item.name}}</view>
+                        <view class="book_author">作者：{{item.author_name}}</view>
+                        <view class="book_tags">标签：{{item.tags}}</view>
+                        <view class="book_tags">状态：{{item.status == 1 ? "连载" : "完结"}}</view>
+                         <view class="book_tags">类型：{{item.c_name}}</view>
+                    </view>
+                </view>
+            </navigator>
+        </block>
+</view> 
